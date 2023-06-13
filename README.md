@@ -1,5 +1,7 @@
 # MediaWiki and Database Deployment
 
+**Demo URL:** http://a3c35c50ffd92417b985bdebdbc2a526-641227410.ap-south-1.elb.amazonaws.com/
+
 This repository contains the necessary files and instructions for deploying MediaWiki and the associated database on Kubernetes using Helm charts. It also includes the Dockerfile for building the Docker image of MediaWiki and Database also the Terraform code for creating the AWS infrastructure such as VPC and EKS.
 
 ## Prerequisites
@@ -62,7 +64,13 @@ To deploy the MediaWiki and database on Kubernetes using Helm, follow these step
     helm upgrade --install <releaseName> mediawiki
     ```
 
-Note: Make sure you have the Helm CLI installed and configured to work with your Kubernetes cluster before running the Helm commands.
+**Note:** Do not forget to change the credentials in database and mediawiki helm chart.
+
+Default admin login credentials for mediawiki:
+
+username: admin
+
+password: admin@1234! (change password on first login.)
 
 After following these steps, you should have MediaWiki and the associated database deployed and running on your Kubernetes cluster.
 
