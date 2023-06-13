@@ -1,0 +1,30 @@
+name: percona-mysql
+
+namespace: database
+
+replicaCount: 1
+
+image:
+  repository: psujit775/mediawiki
+  pullPolicy: IfNotPresent
+  tag: "percona8"
+
+mysqlRootPassword: cGFzc3dvcmQ=
+
+persistence:
+  storageClass: gp2
+  accessMode: ReadWriteOnce
+  size: 10Gi
+
+service:
+  type: ClusterIP
+  port: 3306
+
+
+resources:
+   limits:
+     cpu: 1
+     memory: 1Gi
+   requests:
+     cpu: 500m
+     memory: 512Mi

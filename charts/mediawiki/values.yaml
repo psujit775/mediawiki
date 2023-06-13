@@ -1,0 +1,23 @@
+name: mediawiki
+
+namespace: demo
+
+replicaCount: 1
+
+image:
+  repository: psujit775/mediawiki
+  pullPolicy: Always
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 80
+
+
+resources:
+   limits:
+     cpu: 100m
+     memory: 128Mi
+   requests:
+     cpu: 100m
+     memory: 128Mi
